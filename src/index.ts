@@ -1,6 +1,8 @@
 import wp from 'whatsapp-web.js';
 import qrcode from 'qrcode-terminal';
 import { handleMessage } from './message';
+import loadConfig from './config';
+loadConfig();
 
 const { Client, LocalAuth } = wp;
 
@@ -20,8 +22,8 @@ client.on('ready', () => {
   console.log('Client is ready!');
 });
 
-client.on('message', (message) => {
-  const response = handleMessage(message);
+client.on('message', async (message) => {
+  const response = await handleMessage(message);
   if (response) {
     message.reply(response);
   }

@@ -1,0 +1,4 @@
+export const COUNTER_ACTIONS = {
+  GET_ONE: 'COUNTER_GET_ONE',
+  GET_ALL: 'COUNTER_GET_ALL',
+};
