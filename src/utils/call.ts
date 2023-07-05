@@ -28,13 +28,13 @@ function callHandler(
   return options;
 }
 
-function CallRequest(
+function CallRequest<T>(
   url: string,
   method = 'GET',
   data: Record<string, unknown> = null,
   isUrlComplete = false
 ) {
-  return new Promise((resolve, reject) => {
+  return new Promise<T>((resolve, reject) => {
     axios(callHandler(method, url, isUrlComplete, data))
       .then(({ data }) => {
         resolve(data);

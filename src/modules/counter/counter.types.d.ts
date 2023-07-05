@@ -10,3 +10,19 @@ export type CounterResponse = {
   created_at: string;
   updated_at: string;
 };
+
+export type CounterAPI = {
+  items: CounterResponse[];
+  paginator: {
+    totalItems: number;
+    offset: number;
+    limit: number;
+    totalPages: number;
+    currentPage: number;
+    pagingCounter: number;
+    hasPrevPage: boolean;
+    hasNextPage: boolean;
+    prev: number | null;
+    next: number | null;
+  };
+};
